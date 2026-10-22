@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "title": "Curse of Strahd",
+  "locations": [
+    {"key":"tser-pool-encampment","title":"Tser Pool Encampment","status":"campaign-ready","file":"locations/tser-pool-encampment.json"},
+    {"key":"church-of-the-morninglord","title":"Church of the Morninglord","status":"campaign-ready","file":"locations/church-of-the-morninglord.json"},
+    {"key":"death-house","title":"Death House","status":"campaign-ready","file":"locations/death-house.json"},
+    {"key":"blue-water-inn","title":"Blue Water Inn","status":"campaign-ready","file":"locations/blue-water-inn.json"},
+    {"key":"burgomasters-mansion","title":"Burgomaster's Mansion","status":"campaign-ready","file":"locations/burgomasters-mansion.json"},
+    {"key":"wachterhaus","title":"Wachterhaus","status":"campaign-ready","file":"locations/wachterhaus.json"},
+    {"key":"coffin-makers-shop","title":"Coffin Maker's Shop","status":"campaign-ready","file":"locations/coffin-makers-shop.json"},
+    {"key":"old-bonegrinder","title":"Old Bonegrinder","status":"campaign-ready","file":"locations/old-bonegrinder.json"},
+    {"key":"argynvostholt","title":"Argynvostholt","status":"campaign-ready","file":"locations/argynvostholt.json"},
+    {"key":"baba-lysagas-creeping-hut","title":"Baba Lysaga's Creeping Hut","status":"campaign-ready","file":"locations/baba-lysagas-creeping-hut.json"},
+    {"key":"van-richtens-tower","title":"Van Richten's Tower","status":"campaign-ready","file":"locations/van-richtens-tower.json"},
+    {"key":"wizard-of-wines-winery","title":"Wizard of Wines Winery","status":"campaign-ready","file":"locations/wizard-of-wines-winery.json"},
+    {"key":"amber-temple","title":"Amber Temple","status":"campaign-ready","file":"locations/amber-temple.json"},
+    {"key":"werewolf-den","title":"Werewolf Den","status":"campaign-ready","file":"locations/werewolf-den.json"},
+    {"key":"castle-ravenloft","title":"Castle Ravenloft","status":"high-complexity-derived","file":"locations/castle-ravenloft.json"}
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "werewolf-den",
+  "title": "Werewolf Den",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM", "VRGR"],
+  "scenes": [
+    {
+      "key": "main",
+      "label": "Werewolf Den",
+      "sourceSceneId": "Migu1pf13bZxzXyq",
+      "names": ["Werewolf Den", "Werewolf Den (Copy)", "Werewolf Den (Populator Copy)"],
+      "width": 7560,
+      "height": 11760,
+      "canvasWidth": 11340,
+      "canvasHeight": 17640,
+      "grid": 140,
+      "padding": 0.25,
+      "backgroundBasename": "werewolf-den.webp"
+    }
+  ],
+  "anchors": {
+    "z1-cave-mouth": {"sceneKey": "main", "x": 5446, "y": 12737, "radius": 9, "verified": true},
+    "z2-guard-post": {"sceneKey": "main", "x": 4966, "y": 11406, "radius": 3, "verified": true},
+    "z3-wolf-den": {"sceneKey": "main", "x": 3848, "y": 11065, "radius": 7, "verified": true},
+    "z5a-south-cave": {"sceneKey": "main", "x": 2898, "y": 8850, "radius": 3, "verified": true},
+    "z5b-north-cave": {"sceneKey": "main", "x": 3150, "y": 7788, "radius": 3, "verified": true},
+    "z6-kirils-cave": {"sceneKey": "main", "x": 3965, "y": 7264, "radius": 4, "verified": true},
+    "z7-shrine": {"sceneKey": "main", "x": 5625, "y": 7559, "radius": 8, "verified": true},
+    "z8-ring-of-stone": {"sceneKey": "main", "x": 7127, "y": 4062, "radius": 8, "verified": true, "referenceOnly": true}
+  },
+  "encounters": [
+    {
+      "id": "wd-z2-guards",
+      "sceneKey": "main",
+      "area": "z2-guard-post",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [
+        {"actorKey": "werewolf-aziana", "actor": "Werewolf", "tokenName": "Aziana", "count": 1, "hidden": false, "disposition": -1},
+        {"actorKey": "werewolf-davanka", "actor": "Werewolf", "tokenName": "Davanka", "count": 1, "hidden": false, "disposition": -1}
+      ]
+    },
+    {
+      "id": "wd-z3-wolf-den",
+      "sceneKey": "main",
+      "area": "z3-wolf-den",
+      "radius": 7,
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [
+        {"actorKey": "wolf", "actor": "Wolf", "count": 9, "hidden": false, "disposition": -1},
+        {"actorKey": "werewolf-skennis", "actor": "Werewolf", "tokenName": "Skennis", "count": 1, "hidden": false, "disposition": -1}
+      ]
+    },
+    {
+      "id": "wd-z5a-bianca",
+      "sceneKey": "main",
+      "area": "z5a-south-cave",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "werewolf-bianca", "actor": "Werewolf", "tokenName": "Bianca", "count": 1, "hidden": false, "disposition": -1}]
+    },
+    {
+      "id": "wd-z5b-occupants",
+      "sceneKey": "main",
+      "area": "z5b-north-cave",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [
+        {"actorKey": "werewolf-wensencia", "actor": "Werewolf", "tokenName": "Wensencia", "count": 1, "hidden": false, "disposition": -1},
+        {"actorKey": "werewolf-kellen", "actor": "Werewolf", "tokenName": "Kellen", "count": 1, "hidden": false, "disposition": 0}
+      ]
+    },
+    {
+      "id": "wd-z6-kiril",
+      "sceneKey": "main",
+      "area": "z6-kirils-cave",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "leader-away-at-first-visit",
+      "humanReview": true,
+      "tokens": [{"actorKey": "kiril-stoyanovich", "actor": "Kiril Stoyanovich", "count": 1, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "wd-z7-shrine",
+      "sceneKey": "main",
+      "area": "z7-shrine",
+      "radius": 8,
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [
+        {"actorKey": "zuleika-toranescu", "actor": "Zuleika Toranescu", "count": 1, "hidden": false, "disposition": 0},
+        {"actorKey": "captured-child", "actor": "Commoner", "tokenName": "Captured Child", "count": 8, "hidden": false, "disposition": 1}
+      ]
+    },
+    {
+      "id": "wd-z1-returning-pack",
+      "sceneKey": "main",
+      "area": "z1-cave-mouth",
+      "radius": 9,
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "hunting-pack-return-event",
+      "humanReview": true,
+      "tokens": [
+        {"actorKey": "werewolf-returning-pack", "actor": "Werewolf", "count": 6, "hidden": true, "disposition": -1},
+        {"actorKey": "wolf-returning-pack", "actor": "Wolf", "count": 9, "hidden": true, "disposition": -1}
+      ]
+    },
+    {
+      "id": "wd-z1-emil-arrival",
+      "sceneKey": "main",
+      "area": "z1-cave-mouth",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "emil-may-arrive-with-party",
+      "humanReview": true,
+      "tokens": [{"actorKey": "emil-toranescu", "actor": "Emil Toranescu", "count": 1, "hidden": true, "disposition": 0}]
+    },
+    {
+      "id": "wd-z1-wereraven-guide",
+      "sceneKey": "main",
+      "area": "z1-cave-mouth",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "child-rescue-guide-event",
+      "humanReview": true,
+      "tokens": [{"actorKey": "wereraven-guide", "actor": "Wereraven", "count": 1, "hidden": true, "disposition": 1}]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "death-house",
+  "title": "Death House",
+  "status": "campaign-ready",
+  "actorSourcePreference": ["MM"],
+  "scenes": [
+    {
+      "key": "main",
+      "label": "Death House",
+      "sourceSceneId": "GoLWbXCl0JWgP5sZ",
+      "names": ["Death House", "Death House (Copy)", "Death House (Populator Copy)"],
+      "width": 7800,
+      "height": 8000,
+      "grid": 200,
+      "padding": 0.25
+    },
+    {
+      "key": "levels",
+      "label": "Death House - Levels",
+      "sourceSceneId": "UPFhyjlunx8K4pDt",
+      "names": ["Death House - Levels", "Death House - Levels (Copy)", "Death House - Levels (Populator Copy)"],
+      "width": 5000,
+      "height": 4000,
+      "grid": 200,
+      "padding": 0.25
+    }
+  ],
+  "anchors": {
+    "main:area-11": {"area":"area-11","sceneKey":"main","x":8500,"y":5000,"elevation":10,"verified":true},
+    "main:area-14": {"area":"area-14","sceneKey":"main","x":8200,"y":4100,"elevation":10,"verified":true},
+    "main:area-28": {"area":"area-28","sceneKey":"main","x":7800,"y":9500,"elevation":-10,"verified":true},
+    "main:area-29": {"area":"area-29","sceneKey":"main","x":7600,"y":8200,"elevation":-10,"verified":true},
+    "main:area-31": {"area":"area-31","sceneKey":"main","x":6500,"y":7500,"elevation":-10,"verified":true},
+    "main:area-33": {"area":"area-33","sceneKey":"main","x":5800,"y":9000,"elevation":-10,"verified":true},
+    "main:area-34": {"area":"area-34","sceneKey":"main","x":5800,"y":7900,"elevation":-10,"verified":true},
+    "main:area-38": {"area":"area-38","sceneKey":"main","x":3700,"y":7400,"elevation":-20,"verified":true},
+    "levels:area-11": {"area":"area-11","sceneKey":"levels","x":5100,"y":3800,"elevation":10,"verified":true},
+    "levels:area-14": {"area":"area-14","sceneKey":"levels","x":4800,"y":2900,"elevation":10,"verified":true},
+    "levels:area-28": {"area":"area-28","sceneKey":"levels","x":4400,"y":4500,"elevation":-10,"verified":true},
+    "levels:area-29": {"area":"area-29","sceneKey":"levels","x":4200,"y":3200,"elevation":-10,"verified":true},
+    "levels:area-31": {"area":"area-31","sceneKey":"levels","x":3100,"y":2500,"elevation":-10,"verified":true},
+    "levels:area-33": {"area":"area-33","sceneKey":"levels","x":2400,"y":4000,"elevation":-10,"verified":true},
+    "levels:area-34": {"area":"area-34","sceneKey":"levels","x":2400,"y":2900,"elevation":-10,"verified":true},
+    "levels:area-38": {"area":"area-38","sceneKey":"levels","x":2900,"y":2600,"elevation":-20,"verified":true}
+  },
+  "encounters": [
+    {
+      "id": "dh-11-animated-armor",
+      "sceneKey": "main",
+      "area": "area-11",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "armor-animates-on-approach",
+      "humanReview": true,
+      "tokens": [{"actorKey": "animated-armor", "actor": "Animated Armor", "count": 1, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "dh-14-broom",
+      "sceneKey": "main",
+      "area": "area-14",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "broom-animates-when-handled",
+      "humanReview": true,
+      "tokens": [{"actorKey": "broom-of-animated-attack", "actor": "Broom of Animated Attack", "count": 1, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "dh-28-grick",
+      "sceneKey": "main",
+      "area": "area-28",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "grick", "actor": "Grick", "count": 1, "hidden": true, "disposition": -1, "positions": [{"x": 7700, "y": 9400}]}]
+    },
+    {
+      "id": "dh-29-ghouls",
+      "sceneKey": "main",
+      "area": "area-29",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "ghouls-emerge-from-earthen-walls",
+      "humanReview": true,
+      "tokens": [{"actorKey": "ghoul", "actor": "Ghoul", "count": 4, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "dh-31-shadows",
+      "sceneKey": "main",
+      "area": "area-31",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "shadows-appear-after-orb-disturbed",
+      "humanReview": true,
+      "tokens": [{"actorKey": "shadow", "actor": "Shadow", "count": 5, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "dh-33-mimic",
+      "sceneKey": "main",
+      "area": "area-33",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "mimic", "actor": "Mimic", "count": 1, "hidden": true, "disposition": -1, "positions": [{"x": 5700, "y": 8900}]}]
+    },
+    {
+      "id": "dh-34-ghasts",
+      "sceneKey": "main",
+      "area": "area-34",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "ghast", "actor": "Ghast", "count": 2, "hidden": true, "disposition": -1, "positions": [{"x": 6200, "y": 7800}, {"x": 5800, "y": 7200}]}]
+    },
+    {
+      "id": "dh-38-shambling-mound",
+      "sceneKey": "main",
+      "area": "area-38",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "ritual-failure-shambling-mound",
+      "humanReview": true,
+      "tokens": [{"actorKey": "shambling-mound", "actor": "Shambling Mound", "count": 1, "hidden": true, "disposition": -1}]
+    },
+    {"id":"dh-11-animated-armor-levels","sceneKey":"levels","area":"area-11","mode":"conditional","warningCode":"armor-animates-on-approach","humanReview":true,"tokens":[{"actorKey":"animated-armor","actor":"Animated Armor","count":1,"hidden":true,"disposition":-1,"elevation":10}]},
+    {"id":"dh-14-broom-levels","sceneKey":"levels","area":"area-14","mode":"conditional","warningCode":"broom-animates-when-handled","humanReview":true,"tokens":[{"actorKey":"broom-of-animated-attack","actor":"Broom of Animated Attack","count":1,"hidden":true,"disposition":-1,"elevation":10}]},
+    {"id":"dh-28-grick-levels","sceneKey":"levels","area":"area-28","mode":"static","humanReview":true,"tokens":[{"actorKey":"grick","actor":"Grick","count":1,"hidden":true,"disposition":-1,"elevation":-10}]},
+    {"id":"dh-29-ghouls-levels","sceneKey":"levels","area":"area-29","mode":"conditional","warningCode":"ghouls-emerge-from-earthen-walls","humanReview":true,"tokens":[{"actorKey":"ghoul","actor":"Ghoul","count":4,"hidden":true,"disposition":-1,"elevation":-10}]},
+    {"id":"dh-31-shadows-levels","sceneKey":"levels","area":"area-31","mode":"conditional","warningCode":"shadows-appear-after-orb-disturbed","humanReview":true,"tokens":[{"actorKey":"shadow","actor":"Shadow","count":5,"hidden":true,"disposition":-1,"elevation":-10}]},
+    {"id":"dh-33-mimic-levels","sceneKey":"levels","area":"area-33","mode":"static","humanReview":true,"tokens":[{"actorKey":"mimic","actor":"Mimic","count":1,"hidden":true,"disposition":-1,"elevation":-10}]},
+    {"id":"dh-34-ghasts-levels","sceneKey":"levels","area":"area-34","mode":"static","humanReview":true,"tokens":[{"actorKey":"ghast","actor":"Ghast","count":2,"hidden":true,"disposition":-1,"elevation":-10}]},
+    {"id":"dh-38-shambling-mound-levels","sceneKey":"levels","area":"area-38","mode":"conditional","warningCode":"ritual-failure-shambling-mound","humanReview":true,"tokens":[{"actorKey":"shambling-mound","actor":"Shambling Mound","count":1,"hidden":true,"disposition":-1,"elevation":-20}]}
+  ]
+}

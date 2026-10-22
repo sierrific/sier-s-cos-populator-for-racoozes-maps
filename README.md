@@ -37,4 +37,3 @@ See the [User Guide](docs/USER-GUIDE.md), [technical design](docs/TECHNICAL.md),
 - Scene configuration and non-Token embedded documents are fingerprinted before and after mutations; partial failures roll back.
 
 Licensed under the [MIT License](LICENSE). Racooze's maps, Curse of Strahd, D&D, Foundry VTT, Plutonium, and 5e.tools remain the property of their respective owners.
-

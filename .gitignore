@@ -1,0 +1,8 @@
+.discovery-temp/
+dist/
+node_modules/
+.pnpm-store/
+reports/screenshots/
+*.zip
+*.sha256
+

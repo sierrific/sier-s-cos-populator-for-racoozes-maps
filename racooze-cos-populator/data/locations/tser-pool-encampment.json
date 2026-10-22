@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "tser-pool-encampment",
+  "title": "Tser Pool Encampment",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM"],
+  "scenes": [
+    {
+      "key": "main",
+      "label": "Tser Pool Encampment",
+      "sourceSceneId": "0RQCWFCjeVaJV1Gn",
+      "names": ["Tser Pool Encampment", "Tser Pool Encampment (Copy)", "Tser Pool Encampment (Populator Copy)"],
+      "width": 2450,
+      "height": 2170,
+      "canvasWidth": 3675,
+      "canvasHeight": 3255,
+      "grid": 70,
+      "padding": 0.25,
+      "backgroundBasename": "tser-pool-encampment-ground.webp"
+    }
+  ],
+  "anchors": {
+    "campfire": {"sceneKey": "main", "x": 1800, "y": 1750, "radius": 6, "verified": true},
+    "madam-evas-tent": {"sceneKey": "main", "x": 2670, "y": 1260, "radius": 2, "verified": true},
+    "riverbank": {"sceneKey": "main", "x": 1750, "y": 790, "radius": 10, "verified": true},
+    "wagons": {"sceneKey": "main", "x": 1700, "y": 1500, "radius": 9, "verified": true}
+  },
+  "encounters": [
+    {
+      "id": "tser-campfire-vistani",
+      "sceneKey": "main",
+      "area": "campfire",
+      "radius": 6,
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "vistana-bandit", "actor": "Vistana Bandit", "aliases": ["Bandit"], "count": 12, "hidden": false, "disposition": 0}]
+    },
+    {
+      "id": "tser-wagon-captains",
+      "sceneKey": "main",
+      "area": "wagons",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{
+        "actorKey": "vistana-bandit-captain",
+        "actor": "Vistana Bandit Captain",
+        "aliases": ["Bandit Captain"],
+        "count": 3,
+        "hidden": true,
+        "disposition": 0,
+        "positions": [{"x": 1680, "y": 1150}, {"x": 1370, "y": 1770}, {"x": 2070, "y": 2040}]
+      }]
+    },
+    {
+      "id": "tser-river-draft-horses",
+      "sceneKey": "main",
+      "area": "riverbank",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{
+        "actorKey": "draft-horse",
+        "actor": "Draft Horse",
+        "count": 8,
+        "hidden": false,
+        "disposition": 0,
+        "positions": [
+          {"x": 900, "y": 680}, {"x": 1110, "y": 680}, {"x": 1320, "y": 680}, {"x": 1530, "y": 680},
+          {"x": 1740, "y": 680}, {"x": 1950, "y": 680}, {"x": 2160, "y": 680}, {"x": 2370, "y": 680}
+        ]
+      }]
+    },
+    {
+      "id": "tser-madam-eva",
+      "sceneKey": "main",
+      "area": "madam-evas-tent",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "madam-eva", "actor": "Madam Eva", "count": 1, "hidden": false, "disposition": 0}]
+    }
+  ]
+}

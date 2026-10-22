@@ -1,0 +1,14 @@
+{
+  "name": "racooze-cos-populator",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/validate-module.mjs",
+    "test": "node tools/test-module-core.mjs && node tools/test-foundry-compatibility.mjs 12 && node tools/test-foundry-compatibility.mjs 13 && node tools/test-foundry-compatibility.mjs 14",
+    "build": "node tools/build-package.mjs",
+    "audit": "node tools/audit-release.mjs"
+  },
+  "devDependencies": {"classic-level": "1.4.1"},
+  "engines": {"node": ">=20"}
+}

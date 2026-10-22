@@ -1,0 +1,43 @@
+﻿name: Validate module
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 20
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install development dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies
+        run: pnpm audit
+
+      - name: Validate module data
+        run: npm run validate
+
+      - name: Run core tests
+        run: npm test
+
+      - name: Build Foundry package
+        run: npm run build
+
+      - name: Audit release package
+        run: npm run audit

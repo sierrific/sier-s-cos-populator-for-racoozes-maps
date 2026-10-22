@@ -1,0 +1,88 @@
+<form class="racooze-populator" autocomplete="off">
+  <header class="summary">
+    <div><strong>Location:</strong> <select name="selectedLocation">{{#each locationOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{title}}</option>{{/each}}</select> - {{locationTitle}}</div>
+    <div><strong>Scene:</strong> {{sceneName}} <span class="status status-{{sceneStatus}}">{{sceneStatus}}</span> · <strong>Part:</strong> {{scenePart}}</div>
+    <div><strong>Actors:</strong> {{actorResolved}}/{{actorTotal}} · <strong>Anchors:</strong> {{anchorResolved}}/{{anchorTotal}} · <strong>Plan:</strong> {{planCount}} new · {{moduleCounts.total}} already marked</div>
+  </header>
+
+  {{#if environmentErrors.length}}<div class="notice error">{{#each environmentErrors}}<p>{{this}}</p>{{/each}}</div>{{/if}}
+  {{#if dataErrors.length}}<div class="notice error">{{#each dataErrors}}<p>{{this}}</p>{{/each}}</div>{{/if}}
+  {{#if environmentWarnings.length}}<div class="notice warning">{{#each environmentWarnings}}<p>{{this}}</p>{{/each}}</div>{{/if}}
+  {{#if dataWarnings.length}}<div class="notice warning">{{#each dataWarnings}}<p>{{this}}</p>{{/each}}</div>{{/if}}
+  {{#if sceneCandidates}}<div class="notice warning"><p><strong>Scene diagnostics:</strong> {{sceneCandidates}}</p></div>{{/if}}
+
+  <nav class="tabs" data-group="primary-tabs">
+    <a class="item" data-tab="review"><i class="fas fa-list-check"></i> Review</a>
+    <a class="item" data-tab="actors"><i class="fas fa-dragon"></i> Actors</a>
+    <a class="item" data-tab="anchors"><i class="fas fa-location-dot"></i> Anchors</a>
+    <a class="item" data-tab="actions"><i class="fas fa-wand-magic-sparkles"></i> Execute</a>
+  </nav>
+
+  <section class="content">
+    <div class="tab" data-group="primary-tabs" data-tab="review">
+      <table>
+        <thead><tr><th>Area</th><th>Encounter</th><th>Tokens</th><th>Anchor</th><th>Review</th></tr></thead>
+        <tbody>{{#each encounterRows}}<tr>
+          <td>{{area}}</td><td><button type="button" class="encounter-link" data-action="pan-encounter" data-encounter-id="{{id}}" title="Pan to {{id}}">{{id}}</button></td><td>{{total}}</td><td class="status-{{anchorStatus}}">{{anchorStatus}}</td>
+          <td>{{#if humanReview}}manual · {{/if}}{{#if hidden}}hidden · {{/if}}{{#if conditional}}conditional{{#if warningCode}} — {{warningCode}}{{/if}}{{else}}{{#unless autoPopulate}}review only{{else}}static{{/unless}}{{/if}}</td>
+        </tr>{{/each}}</tbody>
+      </table>
+      {{#if planIssues.length}}
+      <h3>Blockers and skipped instances</h3>
+      <table><thead><tr><th>Area</th><th>Encounter</th><th>Actor</th><th>Instance</th><th>Reason</th></tr></thead>
+        <tbody>{{#each planIssues}}<tr><td>{{area}}</td><td><button type="button" class="encounter-link" data-action="pan-encounter" data-encounter-id="{{encounterId}}" title="Pan to {{encounterId}}">{{encounterId}}</button></td><td>{{actorKey}}</td><td>{{instance}}</td><td>{{reason}}</td></tr>{{/each}}</tbody>
+      </table>
+      {{/if}}
+      {{#if planWarnings.length}}
+      <h3>Review warnings</h3>
+      <table><thead><tr><th>Area</th><th>Encounter</th><th>Reason</th></tr></thead>
+        <tbody>{{#each planWarnings}}<tr><td>{{area}}</td><td><button type="button" class="encounter-link" data-action="pan-encounter" data-encounter-id="{{encounterId}}" title="Pan to {{encounterId}}">{{encounterId}}</button></td><td>{{reason}}</td></tr>{{/each}}</tbody>
+      </table>
+      {{/if}}
+    </div>
+
+    <div class="tab" data-group="primary-tabs" data-tab="actors">
+      <p class="hint">World Actors resolve first, followed by preferred compendiums and the D&D5e SRD pack. Compendium matches remain review-only until imported.</p>
+      <div class="plutonium-box">
+        <button type="button" data-action="open-plutonium" {{#unless plutonium.active}}disabled{{/unless}}><i class="fas fa-book-sparkles"></i> Open Plutonium creature importer</button>
+        <span>Plutonium {{plutonium.version}} · missing: {{unresolvedActorNames}}</span>
+      </div>
+      <button type="button" data-action="import-available-actors"><i class="fas fa-file-import"></i> Import unambiguous matches into the World</button>
+      <div class="form-group"><label>Preferred compendiums</label><input type="text" name="preferredPacks" value="{{preferredPacks}}" placeholder="dnd5e.monsters"></div>
+      <table>
+        <thead><tr><th>Key</th><th>Name / source</th><th>Status</th><th>Override UUID</th></tr></thead>
+        <tbody>{{#each actorRows}}<tr>
+          <td>{{actorKey}}</td><td>{{match}} <small>{{sourceCode}} · {{source}}</small></td><td class="status-{{status}}">{{status}}{{#if candidateCount}} ({{candidateCount}}){{/if}}</td>
+          <td><input type="text" name="override.{{actorKey}}" value="{{uuid}}" placeholder="Actor.xxxxxxxxxxxxxxxx"></td>
+        </tr>{{/each}}</tbody>
+      </table>
+      <button type="button" data-action="save-settings"><i class="fas fa-floppy-disk"></i> Save mappings</button>
+    </div>
+
+    <div class="tab" data-group="primary-tabs" data-tab="anchors">
+      <p class="hint">Labeled Racooze documents take priority. Verified fallback coordinates require an exact geometry match. Manual authoring stores only a setting owned by this module.</p>
+      <div class="form-group"><label>Area</label><select name="anchorArea">{{#each anchorRows}}<option value="{{area}}" {{#if anchorSelected}}selected{{/if}}>{{area}} - {{status}} / {{source}}</option>{{/each}}</select></div>
+      <button type="button" data-action="author-anchor"><i class="fas fa-crosshairs"></i> Mark anchor on canvas</button>
+      <table><thead><tr><th>Area</th><th>Status</th><th>Source</th><th>X</th><th>Y</th></tr></thead>
+        <tbody>{{#each anchorRows}}<tr><td>{{area}}</td><td class="status-{{status}}">{{status}}</td><td>{{source}}</td><td>{{x}}</td><td>{{y}}</td></tr>{{/each}}</tbody>
+      </table>
+    </div>
+
+    <div class="tab actions" data-group="primary-tabs" data-tab="actions">
+      <button type="button" data-action="create-safety-copies"><i class="fas fa-copy"></i> Create missing safety copies</button>
+      <hr>
+      <div class="notice warning"><p>Population and Token maintenance never change Racooze Walls, Lights, Tiles, Notes, Sounds, Drawings, Regions, Actors, or settings. Removal and rebuild affect only Tokens flagged by this module.</p></div>
+      <button type="button" data-action="preview"><i class="fas fa-eye"></i> Preview without saving</button>
+      <button type="button" data-action="clear-preview"><i class="fas fa-eye-slash"></i> Clear preview</button>
+      <button type="button" data-action="populate" {{#if blocked}}disabled{{/if}}><i class="fas fa-plus"></i> Create missing</button>
+      <button type="button" data-action="reconcile" {{#if blocked}}disabled{{/if}}><i class="fas fa-scale-balanced"></i> Reconcile</button>
+      <hr>
+      <div class="form-group"><label>Area to rebuild</label><select name="rebuildArea">{{#each anchorRows}}<option value="{{area}}" {{#if rebuildSelected}}selected{{/if}}>{{area}}</option>{{/each}}</select></div>
+      <button class="danger" type="button" data-action="rebuild-area" {{#if blocked}}disabled{{/if}}><i class="fas fa-rotate"></i> Rebuild area</button>
+      <button class="danger" type="button" data-action="rebuild-location" {{#if blocked}}disabled{{/if}}><i class="fas fa-rotate"></i> Rebuild current map ({{locationTitle}})</button>
+      <button class="danger" type="button" data-action="remove"><i class="fas fa-trash-can"></i> Remove module Tokens</button>
+    </div>
+  </section>
+
+  <footer><button type="button" data-action="refresh"><i class="fas fa-arrows-rotate"></i> Refresh review</button></footer>
+</form>

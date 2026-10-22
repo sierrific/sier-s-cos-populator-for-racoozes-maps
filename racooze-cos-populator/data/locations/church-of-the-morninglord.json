@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "church-of-the-morninglord",
+  "title": "Church of the Morninglord",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM"],
+  "scenes": [
+    {
+      "key": "flat",
+      "label": "Ground and undercroft (flat)",
+      "sourceSceneId": "3omxow9vS0etZGqP",
+      "names": ["Church of the Morninglord", "Church of the Morninglord (Copy)", "Church of the Morninglord (Populator Copy)"],
+      "width": 2800,
+      "height": 5600,
+      "grid": 200,
+      "padding": 0.25
+    },
+    {
+      "key": "levels",
+      "label": "Ground and undercroft (Levels)",
+      "sourceSceneId": "3jHEAusPStzmh6ss",
+      "names": ["Church of the Morninglord - Levels", "Church of the Morninglord - Levels (Copy)", "Church of the Morninglord - Levels (Populator Copy)"],
+      "width": 1400,
+      "height": 1400,
+      "grid": 100,
+      "padding": 0.25
+    }
+  ],
+  "anchors": {
+    "flat:e5f-chapel": {"area": "e5f-chapel", "sceneKey": "flat", "x": 2190, "y": 2410, "radius": 5, "elevation": 0, "verified": true},
+    "flat:e5g-undercroft": {"area": "e5g-undercroft", "sceneKey": "flat", "x": 2250, "y": 5800, "radius": 5, "elevation": 0, "verified": true},
+    "levels:e5f-chapel": {"area": "e5f-chapel", "sceneKey": "levels", "x": 1790, "y": 1410, "radius": 5, "elevation": 0, "verified": true},
+    "levels:e5g-undercroft": {"area": "e5g-undercroft", "sceneKey": "levels", "x": 1850, "y": 2000, "radius": 5, "elevation": -10, "verified": true}
+  },
+  "encounters": [
+    {
+      "id": "church-e5f-donavich-flat",
+      "sceneKey": "flat",
+      "area": "e5f-chapel",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "donavich", "actor": "Donavich", "count": 1, "hidden": false, "disposition": 0}]
+    },
+    {
+      "id": "church-e5g-doru-flat",
+      "sceneKey": "flat",
+      "area": "e5g-undercroft",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "doru", "actor": "Doru", "aliases": ["Vampire Spawn"], "count": 1, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "church-e5f-donavich-levels",
+      "sceneKey": "levels",
+      "area": "e5f-chapel",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "donavich", "actor": "Donavich", "count": 1, "hidden": false, "disposition": 0, "elevation": 0}]
+    },
+    {
+      "id": "church-e5g-doru-levels",
+      "sceneKey": "levels",
+      "area": "e5g-undercroft",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "doru", "actor": "Doru", "aliases": ["Vampire Spawn"], "count": 1, "hidden": true, "disposition": -1, "elevation": -10}]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Sier's CoS Populator for Racooze's Maps
+
+Foundry VTT module files. Version 0.3.0 targets v12-v14 and covers all 36 Scenes in Racooze's CoS Maps 1.0.7. Triggered and itinerant appearances are created hidden and shown with explicit GM warnings. The DotMM-style UI is unchanged. Native v14 Scene Levels are resolved explicitly; ambiguous levels block population. Automated compatibility tests pass, but live browser verification remains at Foundry 12.331. Use versions of dnd5e, Racooze's maps, and optional importers compatible with your Foundry installation. See the project repository for installation, usage, validation, and development documentation.
+
+Distribution is through a private GitHub release. Download the ZIP while signed in and extract it under `Data/modules/racooze-cos-populator/`. The ZIP already includes `module.json`; a separate copy is provided as a release asset. Foundry's automatic installer/updater cannot fetch private GitHub URLs. Never include an access token in the manifest.

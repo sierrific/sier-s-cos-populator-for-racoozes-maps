@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "coffin-makers-shop",
+  "title": "Coffin Maker's Shop",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM"],
+  "scenes": [
+    {
+      "key": "flat",
+      "label": "Shop floors (flat)",
+      "sourceSceneId": "vLNMH2BweVJVeYF5",
+      "names": ["Coffin Maker's Shop", "Coffin Maker's Shop (Copy)", "Coffin Maker's Shop (Populator Copy)"],
+      "width": 1400,
+      "height": 3920,
+      "grid": 140,
+      "padding": 0.25
+    },
+    {
+      "key": "levels",
+      "label": "Shop floors (Levels)",
+      "sourceSceneId": "3KaD3TuYzjBydFcD",
+      "names": ["Coffin Maker's Shop - Levels", "Coffin Maker's Shop - Levels (Copy)", "Coffin Maker's Shop - Levels (Populator Copy)"],
+      "width": 1400,
+      "height": 1960,
+      "grid": 140,
+      "padding": 0.25
+    }
+  ],
+  "anchors": {
+    "flat:n6a-coffin-storage": {"area": "n6a-coffin-storage", "sceneKey": "flat", "x": 1165, "y": 3778, "radius": 4, "elevation": 0, "verified": true},
+    "flat:n6c-workshop": {"area": "n6c-workshop", "sceneKey": "flat", "x": 905, "y": 4316, "radius": 4, "elevation": 0, "verified": true},
+    "flat:n6f-vampire-nest": {"area": "n6f-vampire-nest", "sceneKey": "flat", "x": 1060, "y": 2068, "radius": 5, "elevation": 0, "verified": true},
+    "levels:n6a-coffin-storage": {"area": "n6a-coffin-storage", "sceneKey": "levels", "x": 1165, "y": 1398, "radius": 4, "elevation": 0, "verified": true},
+    "levels:n6c-workshop": {"area": "n6c-workshop", "sceneKey": "levels", "x": 905, "y": 1936, "radius": 4, "elevation": 0, "verified": true},
+    "levels:n6f-vampire-nest": {"area": "n6f-vampire-nest", "sceneKey": "levels", "x": 1060, "y": 1648, "radius": 5, "elevation": 10, "verified": true}
+  },
+  "encounters": [
+    {
+      "id": "coffin-n6c-henrik-flat",
+      "sceneKey": "flat",
+      "area": "n6c-workshop",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "henrik-van-der-voort", "actor": "Henrik van der Voort", "aliases": ["Commoner"], "count": 1, "hidden": false, "disposition": 0}]
+    },
+    {
+      "id": "coffin-n6f-vampire-spawn-flat",
+      "sceneKey": "flat",
+      "area": "n6f-vampire-nest",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "six-crates-open-together",
+      "humanReview": true,
+      "tokens": [{"actorKey": "vampire-spawn", "actor": "Vampire Spawn", "count": 6, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "coffin-n6a-guards-flat",
+      "sceneKey": "flat",
+      "area": "n6a-coffin-storage",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "bone-theft-report-response",
+      "humanReview": true,
+      "tokens": [{"actorKey": "guard-response", "actor": "Guard", "count": 4, "hidden": true, "disposition": 1}]
+    },
+    {
+      "id": "coffin-n6c-henrik-levels",
+      "sceneKey": "levels",
+      "area": "n6c-workshop",
+      "mode": "static",
+      "autoPopulate": true,
+      "humanReview": true,
+      "tokens": [{"actorKey": "henrik-van-der-voort", "actor": "Henrik van der Voort", "aliases": ["Commoner"], "count": 1, "hidden": false, "disposition": 0, "elevation": 0}]
+    },
+    {
+      "id": "coffin-n6f-vampire-spawn-levels",
+      "sceneKey": "levels",
+      "area": "n6f-vampire-nest",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "six-crates-open-together",
+      "humanReview": true,
+      "tokens": [{"actorKey": "vampire-spawn", "actor": "Vampire Spawn", "count": 6, "hidden": true, "disposition": -1, "elevation": 10}]
+    },
+    {
+      "id": "coffin-n6a-guards-levels",
+      "sceneKey": "levels",
+      "area": "n6a-coffin-storage",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "bone-theft-report-response",
+      "humanReview": true,
+      "tokens": [{"actorKey": "guard-response", "actor": "Guard", "count": 4, "hidden": true, "disposition": 1, "elevation": 0}]
+    }
+  ]
+}

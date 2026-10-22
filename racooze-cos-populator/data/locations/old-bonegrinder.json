@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "old-bonegrinder",
+  "title": "Old Bonegrinder",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM"],
+  "scenes": [
+    {"key":"flat","label":"Four floors (flat)","sourceSceneId":"92QzbhdmD393MuOc","names":["Old Bonegrinder","Old Bonegrinder (Copy)","Old Bonegrinder (Populator Copy)"],"width":3200,"height":3200,"grid":200,"padding":0.25},
+    {"key":"levels","label":"Four floors (Levels)","sourceSceneId":"7O9cYGuLjtJRH1ni","names":["Old Bonegrinder - Levels","Old Bonegrinder - Levels (Copy)","Old Bonegrinder - Levels (Populator Copy)"],"width":1600,"height":1600,"grid":200,"padding":0.25}
+  ],
+  "anchors": {
+    "flat:o1":{"area":"o1","sceneKey":"flat","x":1607,"y":3292,"elevation":0,"verified":true},
+    "flat:o2":{"area":"o2","sceneKey":"flat","x":3214,"y":3298,"elevation":0,"verified":true},
+    "flat:o3":{"area":"o3","sceneKey":"flat","x":1607,"y":1691,"elevation":0,"verified":true},
+    "levels:o1":{"area":"o1","sceneKey":"levels","x":1207,"y":1292,"elevation":0,"verified":true},
+    "levels:o2":{"area":"o2","sceneKey":"levels","x":1214,"y":1298,"elevation":10,"verified":true},
+    "levels:o3":{"area":"o3","sceneKey":"levels","x":1207,"y":1291,"elevation":20,"verified":true}
+  },
+  "encounters": [
+    {"id":"bonegrinder-morgantha-flat","sceneKey":"flat","area":"o2","mode":"static","tokens":[{"actorKey":"morgantha","actor":"Morgantha","aliases":["Night Hag"],"count":1,"hidden":false,"disposition":-1}]},
+    {"id":"bonegrinder-daughters-flat","sceneKey":"flat","area":"o3","mode":"static","tokens":[{"actorKey":"bella-sunbane","actor":"Bella Sunbane","aliases":["Night Hag"],"tokenName":"Bella Sunbane","count":1,"hidden":false,"disposition":-1},{"actorKey":"offalia-wormwiggle","actor":"Offalia Wormwiggle","aliases":["Night Hag"],"tokenName":"Offalia Wormwiggle","count":1,"hidden":false,"disposition":-1}]},
+    {"id":"bonegrinder-raven-warning-flat","sceneKey":"flat","area":"o1","mode":"conditional","warningCode":"approach-warning-then-departs","humanReview":true,"tokens":[{"actorKey":"raven","actor":"Raven","count":1,"hidden":true,"disposition":0}]},
+    {"id":"bonegrinder-dretch-summons-flat","sceneKey":"flat","area":"o1","mode":"conditional","warningCode":"up-to-nine-summons","humanReview":true,"tokens":[{"actorKey":"dretch","actor":"Dretch","count":9,"hidden":true,"disposition":-1}]},
+    {"id":"bonegrinder-morgantha-levels","sceneKey":"levels","area":"o2","mode":"static","tokens":[{"actorKey":"morgantha","actor":"Morgantha","aliases":["Night Hag"],"count":1,"hidden":false,"disposition":-1,"elevation":10}]},
+    {"id":"bonegrinder-daughters-levels","sceneKey":"levels","area":"o3","mode":"static","tokens":[{"actorKey":"bella-sunbane","actor":"Bella Sunbane","aliases":["Night Hag"],"tokenName":"Bella Sunbane","count":1,"hidden":false,"disposition":-1,"elevation":20},{"actorKey":"offalia-wormwiggle","actor":"Offalia Wormwiggle","aliases":["Night Hag"],"tokenName":"Offalia Wormwiggle","count":1,"hidden":false,"disposition":-1,"elevation":20}]},
+    {"id":"bonegrinder-raven-warning-levels","sceneKey":"levels","area":"o1","mode":"conditional","warningCode":"approach-warning-then-departs","humanReview":true,"tokens":[{"actorKey":"raven","actor":"Raven","count":1,"hidden":true,"disposition":0,"elevation":0}]},
+    {"id":"bonegrinder-dretch-summons-levels","sceneKey":"levels","area":"o1","mode":"conditional","warningCode":"up-to-nine-summons","humanReview":true,"tokens":[{"actorKey":"dretch","actor":"Dretch","count":9,"hidden":true,"disposition":-1,"elevation":0}]}
+  ]
+}

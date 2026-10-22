@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "campaignKey": "cos",
+  "locationKey": "baba-lysagas-creeping-hut",
+  "title": "Baba Lysaga's Creeping Hut",
+  "status": "derived-geometry",
+  "actorSourcePreference": ["COS", "MM"],
+  "scenes": [
+    {
+      "key": "main",
+      "label": "Baba Lysaga's Creeping Hut",
+      "sourceSceneId": "dZimeof0WI2o4j4H",
+      "names": ["Baba Lysaga's Creeping Hut", "Baba Lysaga's Creeping Hut (Copy)", "Baba Lysaga's Creeping Hut (Populator Copy)"],
+      "width": 1600,
+      "height": 1600,
+      "canvasWidth": 2400,
+      "canvasHeight": 2400,
+      "grid": 200,
+      "padding": 0.25,
+      "backgroundBasename": "baba-lysagas-creeping-hut.webp"
+    }
+  ],
+  "anchors": {
+    "u3-hut-interior": {"sceneKey": "main", "x": 1200, "y": 1200, "radius": 3, "verified": true},
+    "u3-raven-cages": {"sceneKey": "main", "x": 1760, "y": 1160, "radius": 5, "verified": true},
+    "u3-trapped-chest": {"sceneKey": "main", "x": 900, "y": 1200, "radius": 3, "verified": true},
+    "u3-exterior": {"sceneKey": "main", "x": 1200, "y": 1200, "radius": 5, "verified": true}
+  },
+  "encounters": [
+    {
+      "id": "berez-u3-baba-lysaga",
+      "sceneKey": "main",
+      "area": "u3-hut-interior",
+      "mode": "static",
+      "autoPopulate": true,
+      "tokens": [{"actorKey": "baba-lysaga", "actor": "Baba Lysaga", "count": 1, "hidden": false, "disposition": -1, "positions": [{"x": 1000, "y": 1000}]}]
+    },
+    {
+      "id": "berez-u3-raven-cages",
+      "sceneKey": "main",
+      "area": "u3-raven-cages",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "released-from-two-locked-cages",
+      "humanReview": true,
+      "tokens": [{"actorKey": "swarm-of-ravens", "actor": "Swarm of Ravens", "count": 2, "hidden": true, "disposition": 0, "positions": [{"x": 1660, "y": 660}, {"x": 1660, "y": 1460}]}]
+    },
+    {
+      "id": "berez-u3-crawling-claws",
+      "sceneKey": "main",
+      "area": "u3-trapped-chest",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "released-when-chest-opens",
+      "humanReview": true,
+      "tokens": [{"actorKey": "crawling-claw", "actor": "Crawling Claw", "count": 4, "hidden": true, "disposition": -1}]
+    },
+    {
+      "id": "berez-u3-animated-hut",
+      "sceneKey": "main",
+      "area": "u3-hut-interior",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "animate-only-on-baba-command",
+      "humanReview": true,
+      "tokens": [{"actorKey": "baba-lysagas-creeping-hut", "actor": "Baba Lysaga's Creeping Hut", "count": 1, "hidden": true, "disposition": -1, "tokenWidth": 4, "tokenHeight": 4, "allowStack": true, "positions": [{"x": 800, "y": 800}]}]
+    },
+    {
+      "id": "berez-u3-scarecrow-reserve",
+      "sceneKey": "main",
+      "area": "u3-exterior",
+      "mode": "conditional",
+      "autoPopulate": true,
+      "warningCode": "berez-guards-may-be-elsewhere",
+      "humanReview": true,
+      "tokens": [{
+        "actorKey": "scarecrow",
+        "actor": "Scarecrow",
+        "count": 7,
+        "hidden": true,
+        "disposition": -1,
+        "positions": [{"x": 400, "y": 400}, {"x": 800, "y": 400}, {"x": 1400, "y": 400}, {"x": 2000, "y": 600}, {"x": 400, "y": 1600}, {"x": 800, "y": 1800}, {"x": 1600, "y": 1800}]
+      }]
+    }
+  ]
+}

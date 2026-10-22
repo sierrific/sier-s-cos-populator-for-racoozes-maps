@@ -1,0 +1,22 @@
+#racooze-cos-populator-app .window-content { padding: 0; }
+.racooze-populator { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 10px; }
+.racooze-populator .summary { display: flex; justify-content: space-between; gap: 16px; padding: 8px; background: rgba(0, 0, 0, 0.12); }
+.racooze-populator .tabs { flex: 0 0 auto; }
+.racooze-populator .content { flex: 1 1 auto; min-height: 0; overflow: auto; }
+.racooze-populator table { width: 100%; margin: 6px 0; }
+.racooze-populator th { text-align: left; position: sticky; top: 0; background: var(--color-cool-5, #333); color: white; }
+.racooze-populator td, .racooze-populator th { padding: 4px 6px; vertical-align: top; }
+.racooze-populator td input { width: 100%; }
+.racooze-populator small { display: block; opacity: 0.75; }
+.racooze-populator .notice { border-left: 4px solid; padding: 5px 9px; }
+.racooze-populator .notice p { margin: 3px 0; }
+.racooze-populator .notice.error { border-color: #b42318; background: rgba(180, 35, 24, 0.12); }
+.racooze-populator .notice.warning { border-color: #b7791f; background: rgba(183, 121, 31, 0.12); }
+.racooze-populator .status-resolved, .racooze-populator .status-prototype { color: #08783e; font-weight: 600; }
+.racooze-populator .status-unresolved, .racooze-populator .status-ambiguous, .racooze-populator .status-requiresImport, .racooze-populator .status-invalidOverride { color: #a61b1b; font-weight: 600; }
+.racooze-populator .plutonium-box { display: grid; grid-template-columns: minmax(260px, 0.6fr) 1fr; gap: 8px; align-items: center; margin: 8px 0; }
+.racooze-populator .actions button { margin: 4px; width: auto; }
+.racooze-populator button.danger { border-color: #a61b1b; }
+.racooze-populator button.encounter-link { width: auto; height: auto; min-height: 0; margin: 0; padding: 0; border: 0; background: none; box-shadow: none; color: var(--color-text-hyperlink, #185aa9); font: inherit; line-height: inherit; text-align: left; text-decoration: underline; cursor: pointer; }
+.racooze-populator button.encounter-link:hover, .racooze-populator button.encounter-link:focus { color: var(--color-text-light-highlight, #000); text-shadow: 0 0 4px rgba(255, 255, 255, 0.7); }
+.racooze-populator footer { flex: 0 0 auto; }

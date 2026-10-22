@@ -1,0 +1,23 @@
+{
+  "schemaVersion":1,"campaignKey":"cos","locationKey":"van-richtens-tower","title":"Van Richten's Tower","status":"derived-geometry","actorSourcePreference":["COS","MM"],
+  "scenes":[
+    {"key":"flat","label":"Four floors (flat)","sourceSceneId":"ctrCy7sBKmreDxxA","names":["Van Richten's Tower","Van Richten's Tower (Copy)","Van Richten's Tower (Populator Copy)"],"width":3000,"height":9600,"grid":200,"padding":0.25},
+    {"key":"levels","label":"Four floors (Levels)","sourceSceneId":"LaWVSQI9adShjMls","names":["Van Richten's Tower - Levels","Van Richten's Tower - Levels (Copy)","Van Richten's Tower - Levels (Populator Copy)"],"width":3000,"height":2400,"grid":200,"padding":0.25}
+  ],
+  "anchors":{
+    "flat:outside":{"area":"outside","sceneKey":"flat","x":3100,"y":11100,"elevation":0,"verified":true},"flat:v2":{"area":"v2","sceneKey":"flat","x":2300,"y":10600,"elevation":0,"verified":true},"flat:v4":{"area":"v4","sceneKey":"flat","x":2300,"y":10600,"elevation":0,"verified":true},"flat:v7":{"area":"v7","sceneKey":"flat","x":2300,"y":3400,"elevation":30,"verified":true},
+    "levels:outside":{"area":"outside","sceneKey":"levels","x":3100,"y":2100,"elevation":0,"verified":true},"levels:v2":{"area":"v2","sceneKey":"levels","x":2300,"y":1600,"elevation":0,"verified":true},"levels:v4":{"area":"v4","sceneKey":"levels","x":2300,"y":1600,"elevation":0,"verified":true},"levels:v7":{"area":"v7","sceneKey":"levels","x":2300,"y":1600,"elevation":30,"verified":true}
+  },
+  "encounters":[
+    {"id":"tower-ezmerelda-arrival-flat","sceneKey":"flat","area":"outside","mode":"conditional","warningCode":"ezmerelda-not-initially-present","humanReview":true,"tokens":[{"actorKey":"ezmerelda-davenir","actor":"Ezmerelda d'Avenir","count":1,"hidden":true,"disposition":1},{"actorKey":"riding-horse","actor":"Riding Horse","count":1,"hidden":true,"disposition":0}]},
+    {"id":"tower-blue-dragon-flat","sceneKey":"flat","area":"v2","mode":"conditional","warningCode":"door-puzzle-failure","humanReview":true,"tokens":[{"actorKey":"young-blue-dragon","actor":"Young Blue Dragon","count":1,"hidden":true,"disposition":-1}]},
+    {"id":"tower-clay-golems-flat","sceneKey":"flat","area":"v4","mode":"conditional","warningCode":"four-dormant-statues","humanReview":true,"tokens":[{"actorKey":"clay-golem","actor":"Clay Golem","count":4,"hidden":true,"disposition":-1}]},
+    {"id":"tower-animated-armor-flat","sceneKey":"flat","area":"v7","mode":"conditional","warningCode":"dormant-until-triggered","humanReview":true,"tokens":[{"actorKey":"animated-armor","actor":"Animated Armor","count":1,"hidden":true,"disposition":-1,"elevation":30}]},
+    {"id":"tower-werewolf-pack-flat","sceneKey":"flat","area":"outside","mode":"conditional","warningCode":"special-event-pack-attack","humanReview":true,"tokens":[{"actorKey":"kiril-stoyanovich","actor":"Kiril Stoyanovich","aliases":["Werewolf"],"count":1,"hidden":true,"disposition":-1},{"actorKey":"werewolf","actor":"Werewolf","count":6,"hidden":true,"disposition":-1},{"actorKey":"wolf","actor":"Wolf","count":9,"hidden":true,"disposition":-1}]},
+    {"id":"tower-ezmerelda-arrival-levels","sceneKey":"levels","area":"outside","mode":"conditional","warningCode":"ezmerelda-not-initially-present","humanReview":true,"tokens":[{"actorKey":"ezmerelda-davenir","actor":"Ezmerelda d'Avenir","count":1,"hidden":true,"disposition":1},{"actorKey":"riding-horse","actor":"Riding Horse","count":1,"hidden":true,"disposition":0}]},
+    {"id":"tower-blue-dragon-levels","sceneKey":"levels","area":"v2","mode":"conditional","warningCode":"door-puzzle-failure","humanReview":true,"tokens":[{"actorKey":"young-blue-dragon","actor":"Young Blue Dragon","count":1,"hidden":true,"disposition":-1}]},
+    {"id":"tower-clay-golems-levels","sceneKey":"levels","area":"v4","mode":"conditional","warningCode":"four-dormant-statues","humanReview":true,"tokens":[{"actorKey":"clay-golem","actor":"Clay Golem","count":4,"hidden":true,"disposition":-1}]},
+    {"id":"tower-animated-armor-levels","sceneKey":"levels","area":"v7","mode":"conditional","warningCode":"dormant-until-triggered","humanReview":true,"tokens":[{"actorKey":"animated-armor","actor":"Animated Armor","count":1,"hidden":true,"disposition":-1,"elevation":30}]},
+    {"id":"tower-werewolf-pack-levels","sceneKey":"levels","area":"outside","mode":"conditional","warningCode":"special-event-pack-attack","humanReview":true,"tokens":[{"actorKey":"kiril-stoyanovich","actor":"Kiril Stoyanovich","aliases":["Werewolf"],"count":1,"hidden":true,"disposition":-1},{"actorKey":"werewolf","actor":"Werewolf","count":6,"hidden":true,"disposition":-1},{"actorKey":"wolf","actor":"Wolf","count":9,"hidden":true,"disposition":-1}]}
+  ]
+}
