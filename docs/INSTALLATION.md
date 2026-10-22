@@ -10,13 +10,22 @@
 
 The package is adapted for v14 but has not yet been browser-tested there. Foundry may display an unverified-version warning because `verified` remains 12.331. This does not prevent installation on v14. Dependency compatibility is independent: the populator does not upgrade or override Racooze, Scene Packer, Plutonium, or dnd5e manifests. Back up your World and check those packages before migrating. See [v14 compatibility](FOUNDRY-V14.md).
 
-## Private GitHub release
+## Install with Foundry
 
-1. Sign in to GitHub with access to this repository and open the [0.3.0 release](https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/tag/v0.3.0).
-2. Download `racooze-cos-populator-0.3.0.zip`. The separate `module.json` and SHA-256 checksum are also attached; the ZIP already contains `module.json` at its root.
-3. Extract the module as described below, reload Foundry, and enable it with Racooze's maps in the target World.
+1. In Foundry Setup, open **Add-on Modules → Install Module**.
+2. Paste this URL into **Manifest URL**, then click **Install**:
+
+   `https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/latest/download/module.json`
+
+3. Launch your World and enable the module with Racooze's maps.
 4. Open **Game Settings → Configure Settings → Module Settings → Sier's CoS Populator**.
 
-Foundry cannot authenticate to these private GitHub release URLs. Pasting the private JSON URL into its manifest installer will not work; updates also require manual download. Never place an access token in a module manifest or installation URL.
+The repository and release assets are public. The manifest supports Foundry's installer/updater without GitHub authentication. Never place an access token in a module manifest or installation URL.
 
-For manual installations, extract the ZIP so `module.json` is directly under `Data/modules/racooze-cos-populator/`. Do not place the repository root in the modules directory.
+## Manual installation
+
+1. Open the [0.3.0 release](https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/tag/v0.3.0) and download `racooze-cos-populator-0.3.0.zip`.
+2. Extract the ZIP so `module.json` is directly under `Data/modules/racooze-cos-populator/`. Do not place the repository root in the modules directory.
+3. Reload Foundry and enable the module in your World.
+
+The standalone `module.json` and SHA-256 checksum are also attached to the release; the ZIP already contains `module.json` at its root. The original 0.3.0 ZIP was published while the repository was private, so its bundled README mentions manual-only installation. That note is obsolete; the published ZIP and its checksum are unchanged.

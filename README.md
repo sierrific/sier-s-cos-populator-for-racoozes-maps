@@ -14,13 +14,13 @@ The module never packages adventure prose, statblocks, Racooze assets, 5e.tools 
 
 ## Install
 
-This repository is private. Download `racooze-cos-populator-0.3.0.zip` and `module.json` from the [GitHub release](https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/tag/v0.3.0) while signed in with repository access. Extract the ZIP under `Data/modules/racooze-cos-populator/`, then reload Foundry and enable the module. See [Installation](docs/INSTALLATION.md).
-
-The release includes this manifest URL for reference:
+In Foundry Setup, open **Add-on Modules → Install Module**, paste this public URL into **Manifest URL**, and click **Install**:
 
 `https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/latest/download/module.json`
 
-The private manifest and download URLs require GitHub authentication and cannot be used directly by Foundry's automatic installer/updater. Do not embed GitHub tokens in installation URLs. The local build is `dist/racooze-cos-populator-0.3.0.zip`; building locally does not publish it.
+Enable the module in your World alongside Racooze's maps. The manifest and module ZIP are publicly downloadable; no GitHub login or access token is required. See [Installation](docs/INSTALLATION.md) for requirements and manual installation.
+
+For manual installation, download `racooze-cos-populator-0.3.0.zip` from the [GitHub release](https://github.com/sierrific/sier-s-cos-populator-for-racoozes-maps/releases/tag/v0.3.0) and extract it under `Data/modules/racooze-cos-populator/`. The local build is `dist/racooze-cos-populator-0.3.0.zip`; building locally does not publish it.
 
 See the [User Guide](docs/USER-GUIDE.md), [technical design](docs/TECHNICAL.md), [coverage](docs/COVERAGE.md), and [validation evidence](docs/VALIDATION.md).
 
