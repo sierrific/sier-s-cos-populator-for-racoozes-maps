@@ -21,14 +21,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: Enable pnpm
-        run: corepack enable
-
       - name: Install development dependencies
-        run: pnpm install --frozen-lockfile
+        # Release checks do not use the optional LevelDB discovery utilities.
+        run: npm ci --ignore-scripts
 
       - name: Audit dependencies
-        run: pnpm audit
+        run: npm audit
 
       - name: Validate module data
         run: npm run validate

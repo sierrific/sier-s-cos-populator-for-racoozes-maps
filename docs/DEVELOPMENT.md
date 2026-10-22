@@ -2,6 +2,8 @@
 
 Use Node.js 20 or later.
 
+CI and release workflows use `npm ci --ignore-scripts` with `package-lock.json`, followed by `npm audit`. Release checks do not require the native LevelDB discovery tools, so dependency build scripts are intentionally not run in CI.
+
 ```text
 pnpm install --frozen-lockfile
 npm run validate
